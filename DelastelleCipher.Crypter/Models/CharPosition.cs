@@ -10,5 +10,10 @@ namespace DelastelleCipher.Crypter.Models
     {
         public int Column { get; set; }
         public int Row { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Column}{Row}";
+        }
     }
 }

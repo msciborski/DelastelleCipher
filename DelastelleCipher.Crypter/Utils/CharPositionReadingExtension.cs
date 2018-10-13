@@ -10,6 +10,7 @@ namespace DelastelleCipher.Crypter.Utils
     public static class CharPositionReadingExtension
     {
         private static readonly int matrixLength = 5;
+
         public static string ReadHorizontal(this CharPosition[] source)
         {
             var length = source.Length;
@@ -30,7 +31,7 @@ namespace DelastelleCipher.Crypter.Utils
             return builder.ToString();
         }
 
-        public static string RadUpToDown(this CharPosition[] source)
+        public static string ReadUpToDown(this CharPosition[] source)
         {
             var lenght = source.Length;
             var resultLength = lenght * 2;
@@ -48,13 +49,13 @@ namespace DelastelleCipher.Crypter.Utils
         }
 
         public static string ReadDownToUp(this CharPosition[] source)
-        {
-            var lenght = source.Length;
-            var resultLength = lenght * 2;
+            {
+            var length = source.Length;
+            var resultLength = length * 2;
 
             StringBuilder builder = new StringBuilder(resultLength);
-
-            for (int i = 0; i < resultLength; i++)
+             
+            for (int i = 0; i < length; i++)
             {
                 builder.Append(source[i].Row);
                 var columnPosition = (source[i].Column + 1) == matrixLength ? 0 : source[i].Column + 1;

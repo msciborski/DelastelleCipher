@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DelastelleCipher.Crypter;
+using DelastelleCipher.Crypter.Cyphers;
 using DelastelleCipher.Crypter.Utils;
 
 namespace DelastelleCipher.ConsoleTest
@@ -25,14 +26,14 @@ namespace DelastelleCipher.ConsoleTest
                 Console.WriteLine();
             }
 
-            DelastelleCypherCrypter crypter = new DelastelleCypherCrypter(textToCypher, matrixGenerator);
-            var positions = crypter.GetPositionsOfElements();
-            foreach (var charPosition in positions)
-            {
-                Console.WriteLine($"Column: {charPosition.Column}, Row: {charPosition.Row}");
-            }
-            Console.WriteLine(positions.ReadHorizontal());
-
+            DelastelleCypherDownToUp crypter = new DelastelleCypherDownToUp(matrixGenerator);
+            var encodedText = crypter.Encode(textToCypher);
+            Console.WriteLine(encodedText);
+            var decodedText = crypter.Decode(encodedText);
+            Console.WriteLine(decodedText);
+            //var encodedText = crypter.GetEncodedText(textToCypher, DelastelleCypherType.Horizontal);
+            //Console.WriteLine($"Szyfr: {encodedText}");
+            //Console.WriteLine($"Po deszyfracji: {crypter.DecodeText(encodedText, DelastelleCypherType.Horizontal)}");
             Console.ReadKey();
         }
     }

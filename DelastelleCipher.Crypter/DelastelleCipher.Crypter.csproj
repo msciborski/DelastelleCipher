@@ -40,7 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DelastelleCypherCrypter.cs" />
+    <Compile Include="Factory\Creator.cs" />
+    <Compile Include="Cypher\DelastelleCypherDownToUp.cs" />
+    <Compile Include="Cypher\DelastelleCypherHorizontal.cs" />
+    <Compile Include="Cypher\DelastelleCypher.cs" />
+    <Compile Include="Cypher\DelastelleCypherUpToDown.cs" />
+    <Compile Include="Cypher\ICypher.cs" />
+    <Compile Include="Factory\DelastellaCypherFactory.cs" />
     <Compile Include="Models\CharPosition.cs" />
     <Compile Include="Utils\CharPositionReadingExtension.cs" />
     <Compile Include="PolybiusMatrixGenerator.cs" />
