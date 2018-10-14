@@ -13,6 +13,8 @@ namespace DelastelleCipher.Crypter.Cyphers
         {
         }
 
+        public PolybiusMatrixGenerator MatrixGenerator { get; }
+
         public string Encode(string text)
         {
             var position = GetPositionsOfElements(Matrix, text);

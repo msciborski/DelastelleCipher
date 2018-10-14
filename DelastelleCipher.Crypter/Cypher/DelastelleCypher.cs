@@ -15,14 +15,14 @@ namespace DelastelleCipher.Crypter.Cyphers
 
     public abstract class DelastelleCypher
     {
-        private readonly PolybiusMatrixGenerator _matrixGenerator;
+        public PolybiusMatrixGenerator MatrixGenerator { get; }
 
         public readonly char[,] Matrix;
 
         protected DelastelleCypher(PolybiusMatrixGenerator matrixGenerator)
         {
-            _matrixGenerator = matrixGenerator;
-            Matrix = _matrixGenerator.PobliusMatrix;
+            MatrixGenerator = matrixGenerator;
+            Matrix = MatrixGenerator.PobliusMatrix;
         }
 
 
@@ -45,7 +45,7 @@ namespace DelastelleCipher.Crypter.Cyphers
             return newPositions.ToArray();
         }
 
-        protected CharPosition[] GetPositionsOfElements(char[,] matrix, string text)
+        public CharPosition[] GetPositionsOfElements(char[,] matrix, string text)
         {
             CharPosition[] positions = new CharPosition[text.Length];
             for (int i = 0; i < text.Length; i++)

@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factory\Creator.cs" />
     <Compile Include="Cypher\DelastelleCypherDownToUp.cs" />
     <Compile Include="Cypher\DelastelleCypherHorizontal.cs" />
     <Compile Include="Cypher\DelastelleCypher.cs" />

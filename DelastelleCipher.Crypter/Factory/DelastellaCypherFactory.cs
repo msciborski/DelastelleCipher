@@ -7,9 +7,9 @@ using DelastelleCipher.Crypter.Cyphers;
 
 namespace DelastelleCipher.Crypter.Factory
 {
-    public class DelastellaCypherFactory : Creator
+    public static class DelastellaCypherFactory
     {
-        public override ICypher Create(string key, DelastelleCypherType type)
+        public static ICypher Create(string key, DelastelleCypherType type)
         {
             PolybiusMatrixGenerator matrixGenerator = new PolybiusMatrixGenerator(key);
             switch (type)
